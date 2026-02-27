@@ -104,6 +104,12 @@
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
 
+.mobile-menu a:hover {
+    border: 2px solid black !important;
+    /* background-color: black !important; */
+    color: blacl !important;
+    /* border-radius: 5px 10px 5px 2px; */
+}
         /*  INTRO */
         .intro {
             padding: 140px 60px 60px;

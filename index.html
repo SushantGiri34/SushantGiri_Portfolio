@@ -370,6 +370,11 @@
 
         <script>
 
+            document.getElementById('hamburger').addEventListener('click', function() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.classList.toggle('open');
+});
+
             // Scroll animation for timeline items
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry, i) => {
