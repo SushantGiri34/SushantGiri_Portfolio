@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- NAV -->
+    <nav class="nav">
+        <div class="nav-logo">SG</div>
+        <ul class="nav-links">
+            <a href="#intro">
+                <li>Home</li>
+            </a>
+            <a href="#about">
+                <li>About</li>
+            </a>
+            <a href="#skill-section">
+                <li>Skills</li>
+            </a>
+            <a href="#exp">
+                <li>Work</li>
+            </a>
+            <a href="#project">
+                <li>Project</li>
+            </a>
+            <a href="#contact">
+                <li>Contact</li>
+            </a>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#intro" onclick="closeMobile()">Home</a>
+        <a href="#about" onclick="closeMobile()">About</a>
+        <a href="#work" onclick="closeMobile()">Work</a>
+        <a href="#skill-section" onclick="closeMobile()">Skills</a>
+        <a href="/contact.html" onclick="closeMobile()">Contact</a>
+    </div>
+
+    <!-- INTRO -->
+    <div class="intro" id="intro">
+        <h1>Sushant Giri <br> Designer <br></h1>
+        <div class="place">
+            <h3>(Meerut, Uttar Pradesh, India)</h3>
+            <a href="#work">
+                <h4><i class="ri-arrow-right-down-line"></i> Scroll Down</h4>
+            </a>
+            
+        </div>
+        <a href="SushantGiri-Resume Mca.pdf" download="Sushant_Giri_Front-end_Resume.pdf">
+            <button><i class="ri-download-cloud-line"></i> Resume</button>
+        </a>
+    </div>
+
+    <!-- HERO IMAGE -->
+    <div id="hero-img"></div>
+
+    <!-- ABOUT -->
+    <div id="about">
+        <h2>As a Web Developer, I focus on producing top-notch and impactful Web experiences.</h2>
+        <div class="about-part2">
+            <h3>(About Me)</h3>
+            <div class="icon">
+                <a href="https://www.instagram.com/im_happy_goswami" target="_blank"><i
+                        class="ri-instagram-fill"></i></a>
+                <a href="https://github.com/SushantGiri34" target="_blank"><i class="ri-github-fill"></i></a>
+                <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- WORK -->
+    <div id="work">
+        <div class="work1">
+            <h3>(What I Do)</h3>
+            <i class="ri-arrow-right-down-line"></i>
+        </div>
+        <div class="work2">
+            <div class="head">
+                <div class="elem">
+                    <h1>UI Design</h1>
+                    <p>Crafting visually engaging user interfaces that are both beautiful and functional.</p>
+                </div>
+                <div class="elem">
+                    <h1>UX Design</h1>
+                    <p>Designing user-friendly experiences that make interactions smooth, intuitive, and enjoyable.</p>
+                </div>
+            </div>
+            <div class="head">
+                <div class="elem">
+                    <h1>Responsive Design</h1>
+                    <p>Building websites that work perfectly on any device, adapting to all screen sizes.</p>
+                </div>
+                <div class="elem">
+                    <h1>Performance Optimization</h1>
+                    <p>Optimizing websites for fast load times and high performance for smooth user experiences.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SKILL SECTION -->
+    <div class="skill-section" id="skill-section">
+        <div class="star-container">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+        </div>
+
+        <h1 id="skill">SKILLS</h1>
+
+        <div class="skills-grid">
+            <!-- HTML -->
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                <span>HTML5</span>
+            </div>
+            <!-- CSS -->
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                <span>CSS3</span>
+            </div>
+            <!-- JS -->
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                    alt="JavaScript">
+                <span>JavaScript</span>
+            </div>
+            <!-- Python -->
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                <span>Python</span>
+            </div>
+            <!-- MySQL -->
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+                <span>MySQL</span>
+            </div>
+            <!-- Git -->
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                <span>Git</span>
+            </div>
+            <!-- GitHub -->
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"
+                    style="filter: invert(1);">
+                <span>GitHub</span>
+            </div>
+            <!-- Bootstrap -->
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+                    alt="Bootstrap">
+                <span>Bootstrap</span>
+            </div>
+        </div>
+    </div>
+
+    <!--  WORK BANNER -->
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <span>WORK</span><span class="outline">WORK</span>
+            <span>WORK</span><span class="outline">WORK</span>
+            <span>WORK</span><span class="outline">WORK</span>
+            <span>WORK</span><span class="outline">WORK</span>
+            <span>WORK</span><span class="outline">WORK</span>
+            <span>WORK</span><span class="outline">WORK</span>
+            <span>WORK</span><span class="outline">WORK</span>
+            <span>WORK</span><span class="outline">WORK</span>
+            <span>WORK</span><span class="outline">WORK</span>
+            <span>WORK</span><span class="outline">WORK</span>
+        </div>
+
+        <!-- ========== REPLACE YOUR <div id="exp"> WITH THIS ========== -->
+        <div id="exp">
+            <h1> Internship / Working Experiences</h1>
+
+            <div class="timeline">
+
+                <!-- Experience 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-left">
+                        <p class="company-name">CepiaLabs</p>
+                        <p class="company-location">Noida, Uttar Pradesh, India</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-right">
+                        <p class="exp-date">Sep 2025 – Dec 2025</p>
+                        <p class="exp-role">Front-end Web Developer</p>
+                        <ul class="exp-points">
+                            <li>Contributed during internship at CepiaLabs to build a full-scale Travel Booking Website. Built Past Trips Card, Review Card, Hero Section & Travel Photos using React and Redux. Users can leave reviews managed by Redux state, plan trips based on budget by selecting destinations and activities within a price range</li>
+                            <li>Collaborated in a team-based project to develop a Travel Booking Website.</li>
+                            <!-- <li>Integrated frontend with backend APIs to handle data flow and dynamic content</li> -->
+                            <li>Followed GitHub branching workflow and submitted work to team lead for review</li>
+                            <li>Used Git & GitHub for version control, collaboration, and code reviews</li>
+                            <li>Collaborated with team members under project guidelines and timelines</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span class="exp-tag">React.js</span>
+                            <span class="exp-tag">HTML/CSS/JS</span>
+                            <span class="exp-tag">Redux</span>
+                            <span class="exp-tag">Node</span>
+                            <span class="exp-tag">Git & GitHub</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-left">
+                        <p class="company-name">Turacoz Group</p>
+                        <p class="company-location">Meerut, Uttar Pradesh, India</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-right">
+                        <p class="exp-date">Feb 2025 – Apr 2025</p>
+                        <p class="exp-role">Software Developer (Internship)</p>
+                        <ul class="exp-points">
+                            <li>Trained in Python programming with hands-on project-based learning</li>
+                            <li>Worked with SQLite and SQL databases for data storage and retrieval</li>
+                            <li>Applied Object-Oriented Programming (OOP) concepts in Python during project development
+                            </li>
+                            <li>Collaborated with team members to understand requirements and complete assigned tasks
+                            </li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span class="exp-tag">Python</span>
+                            <span class="exp-tag">SQLite</span>
+                            <span class="exp-tag">SQL</span>
+                            <span class="exp-tag">OOP</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- ========== REPLACE <div id="project"> WITH THIS ========== -->
+        <div id="project">
+
+            <div class="proj-top">
+                <h2>Work <span>&</span><br>Projects</h2>
+                <small>3 — 4 projects</small>
+            </div>
+
+            <div class="proj-cards">
+
+                <!-- Card 01 -->
+                <div class="p-card" onclick="openProj(0)">
+                    <p class="p-card-num">01 — Featured</p>
+                    <span class="p-card-type">Web Application</span>
+                    <h3 class="p-card-title">Travio Travel Website</h3>
+                    <div class="p-card-stack">
+                        <span class="p-stack-tag">React.js</span>
+                        <span class="p-stack-tag">Redux</span>
+                        <!-- <span class="p-stack-tag">Node.js</span> -->
+                        <span class="p-stack-tag">Tailwind</span>
+                    </div>
+                    <button class="p-card-btn">Read More ↗</button>
+                </div>
+                
+                <!-- Card 02 -->
+                <div class="p-card" onclick="openProj(1)">
+                    <p class="p-card-num">01 — Featured</p>
+                    <span class="p-card-type">Front-end Web-page</span>
+                    <h3 class="p-card-title">A Personal Portfolio Website</h3>
+                    <div class="p-card-stack">
+                        <span class="p-stack-tag">Html5</span>
+                        <span class="p-stack-tag">Css3</span>
+                        <span class="p-stack-tag">Remixicon</span>
+                        <span class="p-stack-tag">JavaScript</span>
+                    </div>
+                    <button class="p-card-btn">Read More ↗</button>
+                </div>
+                <!-- Card 03 -->
+                <div class="p-card" onclick="openProj(2)">
+                    <p class="p-card-num">02</p>
+                    <span class="p-card-type">Python Console App</span>
+                    <h3 class="p-card-title">Weather Text-to-Speech Project</h3>
+                    <div class="p-card-stack">
+                        <span class="p-stack-tag">Python</span>
+                        <span class="p-stack-tag">win32com</span>
+                        <span class="p-stack-tag">requests</span>
+                    </div>
+                    <button class="p-card-btn">Read More ↗</button>
+                </div>
+
+                <!-- Card 04 -->
+                <div class="p-card" onclick="openProj(3)">
+                    <p class="p-card-num">03</p>
+                    <span class="p-card-type">Python</span>
+                    <h3 class="p-card-title">Python Expense Tracker</h3>
+                    <div class="p-card-stack">
+                        <span class="p-stack-tag">Python</span>
+                        <span class="p-stack-tag">OOP</span>
+                    </div>
+                    <button class="p-card-btn">Read More ↗</button>
+                </div>
+
+                <!-- Card 05 -->
+                <div class="p-card" onclick="openProj(4)">
+                    <p class="p-card-num">04</p>
+                    <span class="p-card-type">Front-end</span>
+                    <h3 class="p-card-title">Amazon Clone Project</h3>
+                    <div class="p-card-stack">
+                        <span class="p-stack-tag">HTML</span>
+                        <span class="p-stack-tag">CSS</span>
+                    </div>
+                    <button class="p-card-btn">Read More ↗</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ===== POPUP OVERLAY ===== -->
+        <div class="proj-overlay" id="projOverlay" onclick="closeProj(event)">
+            <div class="proj-popup" id="projPopup">
+                <div class="popup-header">
+                    <p class="popup-type" id="popupType"></p>
+                    <h3 class="popup-title" id="popupTitle"></h3>
+                    <button class="popup-close" onclick="closePopup()">✕</button>
+                </div>
+                <div class="popup-body">
+                    <p class="popup-desc" id="popupDesc"></p>
+                    <p class="popup-stack-label">Tech Stack</p>
+                    <div class="popup-stack" id="popupStack"></div>
+                    <a href="#" class="popup-github" id="popupGithub" target="_blank">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                        </svg>
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- CONTACT -->
+        <div id="contact">
+            <h2>Let's Work<br>Together.</h2>
+            <a href="/contact.html" class="contact-btn">
+                <i class="ri-mail-send-line"></i> Get In Touch
+            </a>
+        </div>
+
+        <footer>
+            <p>© 2025 Sushant Giri. All rights reserved.</p>
+        </footer>
+
+        <script>
+
+            // Scroll animation for timeline items
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, i) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, i * 150);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            document.querySelectorAll('.timeline-item').forEach(el => observer.observe(el));
+
+
+            // for readme 
+
+            const projects = [
+                {
+                    type: "Web Application — Internship",
+                    title: "Travio Travel Website",
+                    desc: "Contributed during internship at CepiaLabs to build a full-scale Travel Booking Website. Built Past Trips Card, Review Card, Hero Section & Travel Photos using React and Redux. Users can leave reviews managed by Redux state, plan trips based on budget by selecting destinations and activities within a price range, chat in real-time via WebSocket/Socket.io with Node.js backend, and explore nearby services using Google Maps or Mapbox integration.",
+                    stack: ["HTML", "CSS", "React.js", "Redux", "Tailwind"],
+                    github: "#"
+                },
+
+                {
+                    type: "Front-end Web-page",
+                    title: "A Personal Portfolio Website",
+                    desc: "Designed and developed a fully responsive portfolio website using HTML, CSS, and JavaScript. Included sections like About Me, Skills, and Contact Us with a professional black and white minimalist theme.Implemented a unique shooting star animation background to enhance visual appeal. Optimized for mobile and desktop views ensuring seamless experience across devices. Integrated a Contact Us page with a simple form for easy user interaction.",
+                    stack: ["HTML", "CSS", "remix-icon", "JavaScript", "Tailwind"],
+                    github: "#"
+                },
+                
+
+                {
+                    type: "Python Console App",
+                    title: "Weather Text-to-Speech Project",
+                    desc: "A Python app that fetches the current temperature of any city in Celsius using a weather API and reads it aloud using Windows Text-to-Speech (TTS). Handles invalid city names and API errors gracefully. API key is secured via a .env file for safe usage.",
+                    stack: ["Python", "Windows OS", "win32com.client", "requests", "pywin32"],
+                    github: "#"
+                },
+                {
+                    type: "Python",
+                    title: "Python Expense Tracker",
+                    desc: "A console-based expense manager that lets you add expenses, categorize them (food, travel, shopping, etc.), view all recorded expenses, and check total spending. Built for Python beginners to practice loops, lists, functions, and dictionaries in a real-world context.",
+                    stack: ["Python"],
+                    github: "#"
+                },
+                {
+                    type: "Front-end Clone",
+                    title: "Amazon Clone Project",
+                    desc: "A front-end clone of the Amazon India website built purely with HTML and CSS. It replicates the layout, design, navigation bar, product grid, footer, and overall UI structure of the Amazon home page — great for practicing CSS Flexbox and layout skills.",
+                    stack: ["HTML", "CSS"],
+                    github: "#"
+                }
+            ];
+
+            function openProj(i) {
+                const p = projects[i];
+                document.getElementById('popupType').textContent = p.type;
+                document.getElementById('popupTitle').textContent = p.title;
+                document.getElementById('popupDesc').textContent = p.desc;
+                document.getElementById('popupGithub').href = p.github;
+                document.getElementById('popupStack').innerHTML = p.stack.map(s => `<span class="popup-tag">${s}</span>`).join('');
+                document.getElementById('projOverlay').classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closePopup() {
+                document.getElementById('projOverlay').classList.remove('open');
+                document.body.style.overflow = '';
+            }
+
+            function closeProj(e) {
+                if (e.target === document.getElementById('projOverlay')) closePopup();
+            }
+
+            document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopup(); });
+        </script>
+</body>
+
+</html>
