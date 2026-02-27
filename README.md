@@ -1,100 +1,142 @@
-Sushant Giri's Portfolio
+# Sushant Giri - Full Stack Web Developer
 
-Welcome to my personal portfolio! I'm Sushant Giri, a passionate Web Developer and Designer based in Meerut, Uttar Pradesh, India. This portfolio showcases my skills, experience, and personal projects.
+Welcome to my portfolio! I’m **Sushant Giri**, a passionate web developer focused on delivering impactful and scalable web applications. I specialize in **front-end** and **back-end** technologies, crafting visually engaging and functional user experiences.
 
-🧑‍💻 About Me
+## 🚀 About Me
 
-As a Web Developer, I focus on producing top-notch and impactful web experiences. My expertise spans front-end web development, UI/UX design, and performance optimization. I love turning ideas into clean, user-friendly websites.
+I'm a **Full Stack Web Developer** from **Meerut, Uttar Pradesh, India**, with a background in **MCA**. I thrive in creating solutions that are clean, optimized, and user-friendly, while also collaborating in agile teams to deliver top-notch web solutions. Whether it's designing intuitive UI/UX or building robust back-end systems, I enjoy every aspect of web development.
 
-Social Links
+**Tech Stack**:  
+- **Languages**: JavaScript (React), Python (Basic)
+- **Databases**: MySQL, SQLite
+- **Tools & Frameworks**: Git, GitHub, Bootstrap, 
 
-Instagram
+---
 
-GitHub
+## 🧑‍💻 Skills & Technologies
 
-LinkedIn
+### Front-End Development
 
-⚙️ Skills
+- **HTML5**: Semantic HTML, Accessibility, Forms
+- **CSS3**: Flexbox, Grid, Animations, Transitions
+- **JavaScript**: ES6+, DOM Manipulation, AJAX
+- **React.js**: Basic
+- **Bootstrap**: Responsive Layouts, Grid System
+- **Tailwind CSS**: Utility-first CSS Framework
 
-I have experience working with the following technologies:
+### Back-End Development
 
-HTML5
+- **Python**: Flask, Django, Data Handling, Web Scraping
+- **Databases**: MySQL, SQLite,
 
-CSS3
 
-JavaScript
+### Version Control & Deployment
 
-Python
+- **Git & GitHub**: Version control, Branching, Pull Requests
 
-MySQL
+- **Cloud**: Netlify, Vercel
 
-Git & GitHub
+---
 
-Bootstrap
+## 🎯 Projects
 
-🏆 Experience
-Front-end Web Developer Intern — CepiaLabs
+Here are some of the featured projects that highlight my technical skills and creativity:
 
-Sep 2025 – Dec 2025
+### 1. **[Travio Travel Website](#)**
 
-Worked on a full-scale Travel Booking Website using React and Redux.
+- **Type**: Web Application (Internship)
+- **Tech Stack**: React.js, Tailwind CSS
+- **Description**: A full-scale travel booking website built during my internship. The website allows users to plan trips based on budgets, book activities, and leave reviews. I utilized **React** for the UI, **Redux** for state management, and **Tailwind CSS** for styling.
 
-Built Past Trips Cards, Review Cards, and integrated Google Maps.
+### 2. **[A Personal Portfolio Website](#)**
 
-Collaborated using Git & GitHub for version control.
+- **Type**: Front-End Web-page
+- **Tech Stack**: HTML5, CSS3, JavaScript, Remixicon
+- **Description**: This is my personal portfolio website, designed with a sleek and minimalistic approach to showcase my work. It includes sections like **About Me**, **Skills**, **Work Experience**, and **Projects**.
 
-Software Developer Intern — Turacoz Group
+### 3. **[Weather Text-to-Speech](#)**
 
-Feb 2025 – Apr 2025
+- **Type**: Python Console Application
+- **Tech Stack**: Python, win32com, requests
+- **Description**: A Python project that fetches the current temperature of a city and reads it aloud using **Windows Text-to-Speech**. The app uses an open API to get real-time weather data and **win32com** for TTS functionality.
 
-Focused on Python and SQLite development.
+### 4. **[Python Expense Tracker](#)**
 
-Worked on Object-Oriented Programming (OOP) projects.
+- **Type**: Python (Console App)
+- **Tech Stack**: Python, OOP
+- **Description**: This is a command-line based **expense tracker** that helps users manage their finances by categorizing their expenses and providing real-time tracking. Built using **Object-Oriented Programming (OOP)** in **Python**.
 
-Developed and maintained databases and APIs.
+### 5. **[Amazon Clone](#)**
 
-💻 Projects
-1. Travio Travel Website
+- **Type**: Front-End Clone
+- **Tech Stack**: HTML5, CSS3
+- **Description**: A front-end **clone of Amazon India**, focusing on layout replication and responsive design using **Flexbox** and **CSS Grid**.
 
-Type: Web Application (Internship)
+---
 
-Tech Stack: React.js, Redux, HTML5, CSS3, Tailwind
+## 🌱 Current Learning & Projects
 
-Description: Built a full-scale travel website that allows users to plan trips based on budgets and reviews, powered by Redux for state management.
+I am currently enhancing my skills in **back-end development** with **Node.js**, **Express.js**, and **MongoDB**. I am also working on **Docker** and exploring **Cloud Services** (AWS, Heroku) for seamless deployment of full-stack applications.
 
-2. A Personal Portfolio Website
+---
 
-Type: Front-end Web-page
+## 🏆 Experience
 
-Tech Stack: HTML5, CSS3, Remixicon, JavaScript
+### **Front-End Web Developer Intern — CepiaLabs (Sep 2025 – Dec 2025)**
 
-Description: A fully responsive portfolio website featuring sections like About Me, Skills, and Contact Us, with a unique shooting star animation.
+- Contributed to building a travel booking website using **React.js** and **Redux**.
+- Developed the Past Trips Card, Review Card, and integrated **Google Maps** for user interaction.
+- Implemented state management using **Redux** for user reviews and trip management.
 
-3. Weather Text-to-Speech Project
+### **Software Developer Intern — Turacoz Group (Feb 2025 – Apr 2025)**
 
-Type: Python Console App
+- Focused on Python programming with **SQLite** for data storage.
+- Developed applications using **Object-Oriented Programming** and integrated **REST APIs**.
 
-Tech Stack: Python, win32com, requests
+---
 
-Description: A Python app that fetches and reads out the current temperature of any city.
+## 📧 Contact
 
-4. Python Expense Tracker
+You can reach out to me via the following platforms:
 
-Type: Python
+- [Email](mailto:sushantgiri@example.com)
+- [LinkedIn](https://www.linkedin.com/in/sushant-giri)
+- [GitHub](https://github.com/SushantGiri34)
 
-Tech Stack: Python, OOP
+---
 
-Description: A console-based expense manager to help track spending with categorization.
+## 💡 Key Highlights
 
-5. Amazon Clone Project
+- **Project-Based Learning**: I believe in learning through hands-on projects that simulate real-world scenarios.
+- **Strong GitHub Portfolio**: All of my projects are available on **GitHub**. Feel free to explore my work!
+- **Responsive Design Focus**: I pay close attention to ensuring my websites are **mobile-friendly** and **responsive** across all screen sizes.
+- **Continuous Learning**: I am always experimenting with new tools, frameworks, and techniques to stay ahead in the fast-evolving world of web development.
 
-Type: Front-end Clone
+---
 
-Tech Stack: HTML5, CSS3
+## 🛠 Tools & Libraries I Use
 
-Description: A front-end clone of the Amazon India website, focusing on layout and design with Flexbox.
+- **VS Code**: My go-to IDE for all things coding.
 
-📧 Contact
 
-Let's work together! Feel free to reach out through my contact page
- for any inquiries.
+---
+
+## 📜 Resume
+
+You can download my latest **resume** from [here](SushantGiri-Resume-MCA.pdf).
+
+---
+
+## 🏅 Certifications
+
+-  **SQL Certification** –HackerRank
+- ** Introduction to Programming using Python** – TechGig 
+- **JavaScript Certification** - HackerRank
+
+---
+
+## 👀 Check out my Projects
+
+Feel free to explore my repositories for more detailed documentation and source code. My projects reflect the knowledge I’ve acquired in web development.
+
+---
