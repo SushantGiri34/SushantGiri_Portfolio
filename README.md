@@ -26,7 +26,7 @@ I'm a **Full Stack Web Developer** from **Meerut, Uttar Pradesh, India**, with a
 
 ### Back-End Development
 
-- **Python**: Flask, Django, Data Handling, Web Scraping
+- **Python**: Basic
 - **Databases**: MySQL, SQLite,
 
 
@@ -81,6 +81,13 @@ I am currently enhancing my skills in **back-end development** with **Node.js**,
 ---
 
 ## 🏆 Experience
+
+### **Softcure Solution  Feb. 2026 – Present  
+**Associate ERP Software Engineer (HMS) Meerut Uttar Pradesh, India
+
+- Worked on HMS (Hospital Management System) as Associate ERP Software Engineer, modifying frontend/backend files 
+and managing updates via C-Panel. 
+- Implemented basic PHP scripts, handled license renewals, and customized print reports for hospital operations 
 
 ### **Front-End Web Developer Intern — CepiaLabs (Sep 2025 – Dec 2025)**
 
