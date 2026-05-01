@@ -42,6 +42,12 @@ I'm a **Full Stack Web Developer** from **Meerut, Uttar Pradesh, India**, with a
 
 Here are some of the featured projects that highlight my technical skills and creativity:
 
+### 0. **[Campus Find }(#)**
+
+- **Type**: Web Application Hackerthrone project
+- **Tech Stack**: Html , Css , JavaScript , react , Local Storage , Remix-Icon, Bootsrap Css
+- **Decription**: Participated in a 36-hour MIT Hackathon “HackHeist”, where I developed Campus Find, a lost-and-found reporting system with user and admin login, separate admin portal for approvals, and local storage-based data management. Designed a clean and user-friendly UI and secured a position in the Top 10 from 90+ teams.
+
 ### 1. **[Travio Travel Website](#)**
 
 - **Type**: Web Application (Internship)
