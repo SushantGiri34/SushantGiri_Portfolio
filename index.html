@@ -57,7 +57,7 @@
             </a>
 
         </div>
-        <a href="SushantGiri-Resume Mca.pdf" download="Sushant_Giri_Front-end_Resume.pdf">
+        <a href="Sushant-Giri-Mca-updated.pdf" download="Sushant_Giri_Front-end_Resume.pdf">
             <button><i class="ri-download-cloud-line"></i> Resume</button>
         </a>
     </div>
@@ -180,6 +180,11 @@
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite">
                 <span>SQLite</span>
             </div>
+            <!-- php -->
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+                <span>PHP</span>
+            </div>
         </div>
     </div>
 
@@ -202,9 +207,40 @@
         <div id="exp">
             <h1> Internship / Working Experiences</h1>
 
+            <!-- Experince 1  -->
             <div class="timeline">
 
-                <!-- Experience 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-left">
+                        <p class="company-name">SoftCure Technology LLP</p>
+                        <p class="company-location">Meerut, Uttar Pradesh, India</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-right">
+                        <p class="exp-date">MAr 2026 – Present</p>
+                        <p class="exp-role">Associate ERP Software Engineer (HMS) </p>
+                        <ul class="exp-points">
+                            <li>orked on HMS (Hospital Management System) as Associate ERP Software Engineer, modifying
+                                frontend/backend files
+                                and managing updates via C-Panel.</li>
+                            <li>Implemented basic PHP scripts, handled license renewals, and customized print reports
+                                for hospital operations </li>
+                            <!-- <li>Integrated frontend with backend APIs to handle data flow and dynamic content</li> -->
+                            <!-- <li>Followed GitHub branching workflow and submitted work to team lead for review</li>
+                            <li>Used Git & GitHub for version control, collaboration, and code reviews</li> -->
+                            <li>Collaborated with team members under project guidelines and timelines</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span class="exp-tag">PHP</span>
+                            <span class="exp-tag">HTML/CSS/JS</span>
+                            <span class="exp-tag">c-Panel</span>
+                            <!-- <span class="exp-tag"></span>
+                            <span class="exp-tag">Git & GitHub</span> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 2 -->
                 <div class="timeline-item">
                     <div class="timeline-left">
                         <p class="company-name">CepiaLabs</p>
@@ -235,7 +271,7 @@
                     </div>
                 </div>
 
-                <!-- Experience 2 -->
+                <!-- Experience 3 -->
                 <div class="timeline-item">
                     <div class="timeline-left">
                         <p class="company-name">Turacoz Group</p>
@@ -266,7 +302,7 @@
         </div>
 
 
-        <!-- ========== REPLACE <div id="project"> WITH THIS ========== -->
+        <!--  <div id="project">   -->
         <div id="project">
 
             <div class="proj-top">
@@ -275,6 +311,25 @@
             </div>
 
             <div class="proj-cards">
+
+                <!-- card 0 -->
+                <div class="p-card" onclick="openProj(0)">
+                    <p class="p-card-num">00 — Featured </p>
+                    <span class="p-card-type">Web Application - HackHeist Hackerthrone project</span>
+                    <h3 class="p-card-title">Campus Find</h3>
+                    <div class="p-card-stack">
+                        <span class="p-stack-tag">React.js</span>
+                        <span class="p-stack-tag">Local Storage</span>
+                        <span class="p-stack-tag">Git / Github</span>
+                        <span class="p-stack-tag">HTML</span>
+                        <span class="p-stack-tag">Css</span>
+                        <span class="p-stack-tag">Bootsrap Css</span>
+                        <span class="p-stack-tag">JavaScript</span>
+                        <!-- <span class="p-stack-tag">Node.js</span> -->
+                        <!-- <span class="p-stack-tag">Tailwind</span> -->
+                    </div>
+                    <button class="p-card-btn">Read More ↗</button>
+                </div>
 
                 <!-- Card 01 -->
                 <div class="p-card" onclick="openProj(0)">
@@ -381,10 +436,10 @@
 
         <script>
 
-            document.getElementById('hamburger').addEventListener('click', function() {
-    const mobileMenu = document.getElementById('mobileMenu');
-    mobileMenu.classList.toggle('open');
-});
+            document.getElementById('hamburger').addEventListener('click', function () {
+                const mobileMenu = document.getElementById('mobileMenu');
+                mobileMenu.classList.toggle('open');
+            });
 
             // Scroll animation for timeline items
             const observer = new IntersectionObserver((entries) => {
@@ -405,6 +460,13 @@
 
             const projects = [
                 {
+                    type: "Web Application - HackHeist Hackerthrone project",
+                    title: "Campus Find",
+                    desc: "Participated in a 36-hour MIT Hackathon “HackHeist”, where I developed Campus Find, a lost-and-found reporting system with user and admin login, separate admin portal for approvals, and local storage-based data management. Designed a clean and user-friendly UI and secured a position in the Top 10 from 90+ teams.",
+                    stack: ["HTML", "CSS", "React.js", "JavaScript", "Bootstrap", "RemixIcon", "Local Storage"],
+                    github: "https://campus-find-alpha.vercel.app/"
+                },
+                {
                     type: "Web Application — Internship",
                     title: "Travio Travel Website",
                     desc: "Contributed during internship at CepiaLabs to build a full-scale Travel Booking Website. Built Past Trips Card, Review Card, Hero Section & Travel Photos using React and Redux. Users can leave reviews managed by Redux state, plan trips based on budget by selecting destinations and activities within a price range, chat in real-time via WebSocket/Socket.io with Node.js backend, and explore nearby services using Google Maps or Mapbox integration.",
@@ -417,7 +479,7 @@
                     title: "A Personal Portfolio Website",
                     desc: "Designed and developed a fully responsive portfolio website using HTML, CSS, and JavaScript. Included sections like About Me, Skills, and Contact Us with a professional black and white minimalist theme.Implemented a unique shooting star animation background to enhance visual appeal. Optimized for mobile and desktop views ensuring seamless experience across devices. Integrated a Contact Us page with a simple form for easy user interaction.",
                     stack: ["HTML", "CSS", "remix-icon", "JavaScript", "Tailwind"],
-                    github: "#"
+                    github: "https://sushantgiri-portfolio.netlify.app/"
                 },
 
 
