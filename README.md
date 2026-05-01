@@ -88,8 +88,8 @@ I am currently enhancing my skills in **back-end development** with **Node.js**,
 
 ## 🏆 Experience
 
-### **Softcure Solution  Feb. 2026 – Present  
-**Associate ERP Software Engineer (HMS) Meerut Uttar Pradesh, India
+### **Softcure Solution  Feb. 2026 – Present** 
+**Associate ERP Software Engineer(HMS) Meerut Uttar Pradesh, India**
 
 - Worked on HMS (Hospital Management System) as Associate ERP Software Engineer, modifying frontend/backend files 
 and managing updates via C-Panel. 
