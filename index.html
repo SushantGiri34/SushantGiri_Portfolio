@@ -7,6 +7,282 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
+    
+<!-- ================= SKILLS SECTION (CSS) =================
+     Purane .skills-grid / .skill-card / .skill-section ke CSS ko hata kar
+     ye paste karo. Star ka CSS jaisa tha waisa hi rehne do.
+-->
+<style>
+    /* ---------- Section ---------- */
+    .skill-section {
+        position: relative;
+        overflow: hidden;
+        padding: 90px 20px;
+        text-align: center;
+        color: #e2e8f0;
+        background:
+            radial-gradient(circle at 20% 10%, rgba(56, 189, 248, 0.12), transparent 40%),
+            radial-gradient(circle at 80% 90%, rgba(167, 139, 250, 0.12), transparent 40%),
+            #0b1020;
+    }
+
+    /* ---------- Stars ---------- */
+    .star-container {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .star {
+        position: absolute;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0 0 8px 1px rgba(255, 255, 255, 0.7);
+        opacity: 0.2;
+        animation: twinkle 3s ease-in-out infinite, drift 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes twinkle {
+        0%, 100% { opacity: 0.15; scale: 0.8; }
+        50%      { opacity: 1;    scale: 1.3; }
+    }
+
+    @keyframes drift {
+        from { translate: 0 0; }
+        to   { translate: 12px -18px; }
+    }
+
+    /* ---------- Heading ---------- */
+    #skill {
+        position: relative;
+        z-index: 1;
+        font-size: clamp(2rem, 5vw, 3rem);
+        letter-spacing: 6px;
+        margin: 0 0 8px;
+        background: linear-gradient(90deg, #38bdf8, #a78bfa, #fb923c, #38bdf8);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: shine 6s linear infinite;
+    }
+
+    @keyframes shine {
+        to { background-position: 200% center; }
+    }
+
+    .skill-subtitle {
+        position: relative;
+        z-index: 1;
+        color: #94a3b8;
+        margin: 0 0 30px;
+    }
+
+    /* ---------- Filter buttons ---------- */
+    .skill-filters {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 40px;
+    }
+
+    .filter-btn {
+        padding: 8px 18px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: rgba(255, 255, 255, 0.05);
+        color: #cbd5e1;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.25s ease;
+    }
+
+    .filter-btn:hover {
+        border-color: #38bdf8;
+        color: #fff;
+        transform: translateY(-2px);
+    }
+
+    .filter-btn.active {
+        background: linear-gradient(90deg, #38bdf8, #a78bfa);
+        border-color: transparent;
+        color: #0b1020;
+        font-weight: 600;
+    }
+
+    /* ---------- Category boxes (hamesha barabar size) ---------- */
+    .skill-categories {
+        position: relative;
+        z-index: 1;
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+        align-items: stretch;   /* ek row ke saare boxes ki height same */
+    }
+
+    .skill-category {
+        --mx: 50%;
+        --my: 50%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding: 24px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-top: 3px solid var(--accent);
+        backdrop-filter: blur(8px);
+        overflow: hidden;
+        transition: transform 0.35s ease, box-shadow 0.35s ease,
+                    opacity 0.6s ease;
+    }
+
+    /* mouse ke piche chalne wali glow */
+    .skill-category::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(260px circle at var(--mx) var(--my),
+                    color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+    }
+
+    .skill-category:hover::before { opacity: 1; }
+
+    .skill-category:hover {
+        box-shadow: 0 14px 40px -14px var(--accent);
+    }
+
+    /* scroll reveal (sirf jab JS chal rahi ho) */
+    .js .skill-category {
+        opacity: 0;
+        translate: 0 40px;
+        transition: transform 0.35s ease, box-shadow 0.35s ease,
+                    opacity 0.7s ease, translate 0.7s ease;
+    }
+
+    .js .skill-category.visible {
+        opacity: 1;
+        translate: 0 0;
+    }
+
+    .skill-category.is-hidden { display: none; }
+
+    .category-title {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 20px;
+        font-size: 1.15rem;
+        color: #f1f5f9;
+    }
+
+    .cat-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 10px var(--accent);
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+        50% { box-shadow: 0 0 18px 4px var(--accent); }
+    }
+
+    /* ---------- Skill cards (fixed size, naye cards khud wrap honge) ---------- */
+    .skills-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+        gap: 14px;
+        align-content: start;
+        flex: 1;
+    }
+
+    .skill-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-height: 104px;
+        padding: 14px 8px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid transparent;
+        color: #e2e8f0;
+        font-size: 0.85rem;
+        cursor: default;
+        transition: transform 0.15s ease-out, border-color 0.25s ease,
+                    background 0.25s ease, box-shadow 0.25s ease;
+        will-change: transform;
+    }
+
+    .skill-card:hover {
+        border-color: var(--accent);
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 22px -8px var(--accent);
+    }
+
+    .skill-card img,
+    .skill-card .fallback {
+        width: 44px;
+        height: 44px;
+        object-fit: contain;
+        animation: float 3.5s ease-in-out infinite;
+        transition: transform 0.25s ease;
+    }
+
+    /* har card thoda alag time par float kare */
+    .skill-card:nth-child(2n) img { animation-delay: -0.8s; }
+    .skill-card:nth-child(3n) img { animation-delay: -1.6s; }
+    .skill-card:nth-child(4n) img { animation-delay: -2.4s; }
+
+    @keyframes float {
+        50% { translate: 0 -5px; }
+    }
+
+    .skill-card:hover img,
+    .skill-card:hover .fallback {
+        transform: scale(1.2);
+    }
+
+    .skill-card img.invert { filter: invert(1); }
+
+    /* icon load na ho to ye letter badge dikhega */
+    .skill-card .fallback {
+        display: grid;
+        place-items: center;
+        border-radius: 12px;
+        background: var(--accent);
+        color: #0b1020;
+        font-weight: 700;
+        font-size: 1.3rem;
+    }
+
+    /* ---------- Mobile ---------- */
+    @media (max-width: 640px) {
+        .skill-section { padding: 60px 14px; }
+        .skill-categories { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .star, #skill, .cat-dot,
+        .skill-card img, .skill-card .fallback { animation: none; }
+        .js .skill-category { opacity: 1; translate: none; }
+    }
+</style>
 </head>
 
 <body>
@@ -44,7 +320,7 @@
         <a href="#about" onclick="closeMobile()">About</a>
         <a href="#work" onclick="closeMobile()">Work</a>
         <a href="#skill-section" onclick="closeMobile()">Skills</a>
-        <a href="/contact.html" onclick="closeMobile()">Contact</a>
+        <a href="contact2.html" onclick="closeMobile()">Contact</a>
     </div>
 
     <!-- INTRO -->
@@ -57,10 +333,10 @@
             </a>
 
         </div>
-        <a href="Sushant-Giri-Mca-updated.pdf" download="Sushant_Giri_Front-end_Resume.pdf">
+        <a href="Sushant_Giri_Frontend_Developer.pdf" download="Sushant_Giri_Front-end_Resume.pdf">
             <button><i class="ri-download-cloud-line"></i> Resume</button>
-        </a>
-    </div>
+        </div>
+    </a>
 
     <!-- HERO IMAGE -->
     <div id="hero-img"></div>
@@ -95,7 +371,7 @@
                 </div>
                 <div class="elem">
                     <h1>Backend Basics:</h1>
-                    <p>Working with Python and SQL, learning to manage data and implement simple logic using SQLite.</p>
+                    <p>Working with Python ,php and SQL, learning to manage data and implement simple logic using SQLite.</p>
                 </div>
             </div>
             <div class="head">
@@ -112,81 +388,222 @@
         </div>
     </div>
 
-    <!-- SKILL SECTION -->
-    <div class="skill-section" id="skill-section">
-        <div class="star-container">
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-        </div>
+  <!--
+  =====================================================================
+  SKILLS SECTION  (HTML + CSS + JS, teeno ek hi file mein)
 
-        <h1 id="skill">SKILLS</h1>
+  NAYA SKILL ADD KARNA:
+    Kisi bhi .skills-grid ke andar ye card copy-paste kar do:
 
-        <div class="skills-grid">
-            <!-- HTML -->
-            <div class="skill-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
-                <span>HTML5</span>
-            </div>
-            <!-- CSS -->
-            <div class="skill-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
-                <span>CSS3</span>
-            </div>
-            <!-- JS -->
-            <div class="skill-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                    alt="JavaScript">
-                <span>JavaScript</span>
-            </div>
-            <!-- Python -->
-            <div class="skill-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-                <span>Python</span>
-            </div>
-            <!-- MySQL -->
-            <div class="skill-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
-                <span>MySQL</span>
-            </div>
-            <!-- Git -->
-            <div class="skill-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
-                <span>Git</span>
-            </div>
-            <!-- GitHub -->
-            <div class="skill-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"
-                    style="filter: invert(1);">
-                <span>GitHub</span>
-            </div>
-            <!-- Bootstrap -->
-            <div class="skill-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
-                    alt="Bootstrap">
-                <span>Bootstrap</span>
-            </div>
-            <!-- Sqlite -->
-            <div class="skill-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite">
-                <span>SQLite</span>
-            </div>
-            <!-- php -->
-            <div class="skill-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
-                <span>PHP</span>
-            </div>
-        </div>
+      <div class="skill-card">
+          <img src="ICON_URL" alt="Name">
+          <span>Name</span>
+      </div>
+
+  NAYA CATEGORY ADD KARNA:
+    Ek poora <div class="skill-category" ...> block copy karo, uska
+    data-cat aur --accent badlo, aur upar filter mein ek button add
+    kar do: <button class="filter-btn" data-filter="naya">Naya</button>
+
+  Box apne aap barabar size ke rahenge aur cards khud next line mein
+  chale jayenge, alignment kabhi nahi bigdegi.
+  =====================================================================
+-->
+
+<div class="skill-section" id="skill-section">
+
+    <div class="star-container">
+        <div class="star"></div><div class="star"></div><div class="star"></div>
+        <div class="star"></div><div class="star"></div><div class="star"></div>
+        <div class="star"></div><div class="star"></div><div class="star"></div>
+        <div class="star"></div><div class="star"></div><div class="star"></div>
+        <div class="star"></div><div class="star"></div><div class="star"></div>
+        <div class="star"></div><div class="star"></div><div class="star"></div>
+        <div class="star"></div><div class="star"></div><div class="star"></div>
+        <div class="star"></div><div class="star"></div><div class="star"></div>
     </div>
+
+    <h1 id="skill">SKILLS</h1>
+    <p class="skill-subtitle">Technologies I use to build and ship real projects</p>
+
+    <!-- FILTER BUTTONS -->
+    <div class="skill-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="frontend">Frontend</button>
+        <button class="filter-btn" data-filter="backend">Backend</button>
+        <button class="filter-btn" data-filter="database">Database</button>
+        <button class="filter-btn" data-filter="tools">Tools &amp; Deployment</button>
+    </div>
+
+    <div class="skill-categories">
+
+        <!-- ===== FRONTEND ===== -->
+        <div class="skill-category" data-cat="frontend" style="--accent: #38bdf8;">
+            <h2 class="category-title"><i class="cat-dot"></i>Frontend</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                    <span>HTML5</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                    <span>CSS3</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
+                    <span>Bootstrap</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== BACKEND ===== -->
+        <div class="skill-category" data-cat="backend" style="--accent: #a78bfa;">
+            <h2 class="category-title"><i class="cat-dot"></i>Backend</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+                    <span>PHP</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                    <span>Python</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== DATABASE ===== -->
+        <div class="skill-category" data-cat="database" style="--accent: #34d399;">
+            <h2 class="category-title"><i class="cat-dot"></i>Database</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+                    <span>MySQL</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite">
+                    <span>SQLite</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== TOOLS & DEPLOYMENT ===== -->
+        <div class="skill-category" data-cat="tools" style="--accent: #fb923c;">
+            <h2 class="category-title"><i class="cat-dot"></i>Tools &amp; Deployment</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                    <span>Git</span>
+                </div>
+                <div class="skill-card">
+                    <img class="invert" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+                    <span>GitHub</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman">
+                    <span>Postman</span>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/digitalocean/digitalocean-original.svg" alt="DigitalOcean">
+                    <span>DigitalOcean</span>
+                </div>
+                <div class="skill-card">
+    <img class="invert" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/plesk.svg" alt="Plesk">
+    <span>Plesk</span>
+</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- JS: section ke turant baad hi rakho (body ke end mein bhi chalega) -->
+<script>
+(() => {
+    const section = document.getElementById('skill-section');
+    section.classList.add('js');
+
+    /* 1. Stars: random jagah, size aur twinkle speed */
+    section.querySelectorAll('.star').forEach(star => {
+        const size = 2 + Math.random() * 3;
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.width = star.style.height = size + 'px';
+        star.style.animationDelay = (Math.random() * 5) + 's';
+        star.style.animationDuration = (2 + Math.random() * 4) + 's';
+    });
+
+    /* 2. Icon load na ho to naam ka pehla letter dikha do */
+    section.querySelectorAll('.skill-card img').forEach(img => {
+        img.addEventListener('error', () => {
+            const badge = document.createElement('div');
+            badge.className = 'fallback';
+            badge.textContent = (img.alt || '?').charAt(0).toUpperCase();
+            img.replaceWith(badge);
+        }, { once: true });
+    });
+
+    /* 3. Filter buttons */
+    const buttons = section.querySelectorAll('.filter-btn');
+    const categories = section.querySelectorAll('.skill-category');
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const f = btn.dataset.filter;
+            categories.forEach(cat => {
+                cat.classList.toggle('is-hidden', f !== 'all' && cat.dataset.cat !== f);
+            });
+        });
+    });
+
+    /* 4. Scroll karne par boxes ek ek karke aate hain */
+    const show = el => el.classList.add('visible');
+    if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) { show(e.target); io.unobserve(e.target); }
+            });
+        }, { threshold: 0.15 });
+        categories.forEach((cat, i) => {
+            cat.style.transitionDelay = (i * 0.1) + 's';
+            io.observe(cat);
+        });
+    } else {
+        categories.forEach(show);
+    }
+
+    /* 5. Mouse effects (sirf mouse wale devices par) */
+    if (window.matchMedia('(hover: hover)').matches) {
+        // box ke andar mouse ke piche chalne wali glow
+        categories.forEach(cat => {
+            cat.addEventListener('mousemove', e => {
+                const r = cat.getBoundingClientRect();
+                cat.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+                cat.style.setProperty('--my', (e.clientY - r.top) + 'px');
+            });
+        });
+        // card ka 3D tilt
+        section.addEventListener('mousemove', e => {
+            const card = e.target.closest('.skill-card');
+            if (!card) return;
+            const r = card.getBoundingClientRect();
+            const x = (e.clientX - r.left) / r.width - 0.5;
+            const y = (e.clientY - r.top) / r.height - 0.5;
+            card.style.transform =
+                `perspective(500px) rotateX(${-y * 16}deg) rotateY(${x * 16}deg) translateY(-6px)`;
+        });
+        section.addEventListener('mouseout', e => {
+            const card = e.target.closest('.skill-card');
+            if (card) card.style.transform = '';
+        });
+    }
+})();
+</script>
+
 
     <!--  WORK BANNER -->
     <div class="marquee-section">
@@ -217,12 +634,13 @@
                     </div>
                     <div class="timeline-dot"></div>
                     <div class="timeline-right">
-                        <p class="exp-date">MAr 2026 – Present</p>
-                        <p class="exp-role">Associate ERP Software Engineer (HMS) </p>
+                        <p class="exp-date">Apr 2026 – Present</p>
+                        <p class="exp-role">Web Developer / Associate ERP Software Engineer (HMS)  </p>
                         <ul class="exp-points">
-                            <li>orked on HMS (Hospital Management System) as Associate ERP Software Engineer, modifying
+                            <li>Worked on HMS (Hospital Management System) as Associate ERP Software Engineer, modifying
                                 frontend/backend files
-                                and managing updates via C-Panel.</li>
+                                and managing updates Collaborate with a cross-functional development team to maintain and continuously improve a Hospital Management 
+System (HMS), contributing to feature updates across multiple frontend and backend modules.</li>
                             <li>Implemented basic PHP scripts, handled license renewals, and customized print reports
                                 for hospital operations </li>
                             <!-- <li>Integrated frontend with backend APIs to handle data flow and dynamic content</li> -->
@@ -233,7 +651,12 @@
                         <div class="exp-tags">
                             <span class="exp-tag">PHP</span>
                             <span class="exp-tag">HTML/CSS/JS</span>
+                            <span class="exp-tag">Postman</span>
+                            <span class="exp-tag">MySQL </span>
+                            <span class="exp-tag">DigitalOcean</span>
                             <span class="exp-tag">c-Panel</span>
+                            <span class="exp-tag">Plesk</span>
+
                             <!-- <span class="exp-tag"></span>
                             <span class="exp-tag">Git & GitHub</span> -->
                         </div>
@@ -303,18 +726,51 @@
 
 
         <!--  <div id="project">   -->
-        <div id="project">
+<div id="project">
 
             <div class="proj-top">
                 <h2>Work <span>&</span><br>Projects</h2>
-                <small>3 — 4 projects</small>
+                <small>8 projects</small>
             </div>
 
             <div class="proj-cards">
 
-                <!-- card 0 -->
+                <!-- Card 00 : Work -->
                 <div class="p-card" onclick="openProj(0)">
-                    <p class="p-card-num">00 — Featured </p>
+                    <p class="p-card-num">00 — Work</p>
+                    <span class="p-card-type">Feature Development & Improvements · Softcure Solution LLP</span>
+                    <h3 class="p-card-title">Hospital Management System (HMS)</h3>
+                    <div class="p-card-stack">
+                        <span class="p-stack-tag">PHP</span>
+                        <span class="p-stack-tag">JavaScript</span>
+                        <span class="p-stack-tag">HTML</span>
+                        <span class="p-stack-tag">CSS</span>
+                        <span class="p-stack-tag">Bootstrap</span>
+                        <span class="p-stack-tag">Database</span>
+                    </div>
+                    <button class="p-card-btn">Read More ↗</button>
+                </div>
+
+                <!-- Card 01 : Work -->
+                <div class="p-card" onclick="openProj(1)">
+                    <p class="p-card-num">01 — Work</p>
+                    <span class="p-card-type">Built from Scratch (Solo) · Softcure Solution LLP</span>
+                    <h3 class="p-card-title">CRM System (NHCX Module)</h3>
+                    <div class="p-card-stack">
+                        <span class="p-stack-tag">PHP</span>
+                        <span class="p-stack-tag">JavaScript</span>
+                        <span class="p-stack-tag">HTML</span>
+                        <span class="p-stack-tag">CSS</span>
+                        <span class="p-stack-tag">Bootstrap</span>
+                        <span class="p-stack-tag">Database</span>
+                        <span class="p-stack-tag">AI-assisted Dev</span>
+                    </div>
+                    <button class="p-card-btn">Read More ↗</button>
+                </div>
+
+                <!-- Card 02 : Campus Find -->
+                <div class="p-card" onclick="openProj(2)">
+                    <p class="p-card-num">02 — Featured</p>
                     <span class="p-card-type">Web Application - HackHeist Hackerthrone project</span>
                     <h3 class="p-card-title">Campus Find</h3>
                     <div class="p-card-stack">
@@ -331,9 +787,9 @@
                     <button class="p-card-btn">Read More ↗</button>
                 </div>
 
-                <!-- Card 01 -->
-                <div class="p-card" onclick="openProj(0)">
-                    <p class="p-card-num">01 — Featured</p>
+                <!-- Card 03 : Travio -->
+                <div class="p-card" onclick="openProj(3)">
+                    <p class="p-card-num">03 — Featured</p>
                     <span class="p-card-type">Web Application</span>
                     <h3 class="p-card-title">Travio Travel Website</h3>
                     <div class="p-card-stack">
@@ -345,9 +801,9 @@
                     <button class="p-card-btn">Read More ↗</button>
                 </div>
 
-                <!-- Card 02 -->
-                <div class="p-card" onclick="openProj(1)">
-                    <p class="p-card-num">01 — Featured</p>
+                <!-- Card 04 : Portfolio -->
+                <div class="p-card" onclick="openProj(4)">
+                    <p class="p-card-num">04 — Featured</p>
                     <span class="p-card-type">Front-end Web-page</span>
                     <h3 class="p-card-title">A Personal Portfolio Website</h3>
                     <div class="p-card-stack">
@@ -358,10 +814,11 @@
                     </div>
                     <button class="p-card-btn">Read More ↗</button>
                 </div>
-                <!-- Card 03 -->
-                <div class="p-card" onclick="openProj(2)">
-                    <p class="p-card-num">02</p>
-                    <span class="p-card-type">Python Console App</span>
+
+                <!-- Card 05 : Practice -->
+                <div class="p-card" onclick="openProj(5)">
+                    <p class="p-card-num">05 — Practice</p>
+                    <span class="p-card-type">Python Console App · Practice Project</span>
                     <h3 class="p-card-title">Weather Text-to-Speech Project</h3>
                     <div class="p-card-stack">
                         <span class="p-stack-tag">Python</span>
@@ -371,10 +828,10 @@
                     <button class="p-card-btn">Read More ↗</button>
                 </div>
 
-                <!-- Card 04 -->
-                <div class="p-card" onclick="openProj(3)">
-                    <p class="p-card-num">03</p>
-                    <span class="p-card-type">Python</span>
+                <!-- Card 06 : Practice -->
+                <div class="p-card" onclick="openProj(6)">
+                    <p class="p-card-num">06 — Practice</p>
+                    <span class="p-card-type">Python · Practice Project</span>
                     <h3 class="p-card-title">Python Expense Tracker</h3>
                     <div class="p-card-stack">
                         <span class="p-stack-tag">Python</span>
@@ -383,10 +840,10 @@
                     <button class="p-card-btn">Read More ↗</button>
                 </div>
 
-                <!-- Card 05 -->
-                <div class="p-card" onclick="openProj(4)">
-                    <p class="p-card-num">04</p>
-                    <span class="p-card-type">Front-end</span>
+                <!-- Card 07 : Practice -->
+                <div class="p-card" onclick="openProj(7)">
+                    <p class="p-card-num">07 — Practice</p>
+                    <span class="p-card-type">Front-end · Practice Project</span>
                     <h3 class="p-card-title">Amazon Clone Project</h3>
                     <div class="p-card-stack">
                         <span class="p-stack-tag">HTML</span>
@@ -425,7 +882,7 @@
         <!-- CONTACT -->
         <div id="contact">
             <h2>Let's Work<br>Together.</h2>
-            <a href="/contact.html" class="contact-btn">
+            <a href="contact2.html" class="contact-btn">
                 <i class="ri-mail-send-line"></i> Get In Touch
             </a>
         </div>
@@ -460,6 +917,20 @@
 
             const projects = [
                 {
+                    type: "Work Project — Softcure Solution LLP",
+                    title: "Hospital Management System (HMS) — Improvements & Feature Development",
+                    desc: "Improved an existing Hospital Management System by adding new features and enhancing the frontend and backend modules used by hospital staff. Identified and resolved bugs and performance issues across the application, improving system stability, reliability, and response time.",
+                    stack: ["PHP", "JavaScript", "HTML", "CSS", "Bootstrap", "Database"],
+                    github: "#"
+                },
+                {
+                    type: "Work Project — Softcure Solution LLP (Solo Project)",
+                    title: "CRM System (NHCX Module) — Built from Scratch",
+                    desc: "Independently designed and built a CRM system from scratch using the company's core technology stack, combining AI-assisted development tools with manual coding. Integrated the CRM as the NHCX module within the larger Hospital Management System, and later collaborated with the team on major enhancements to the combined platform.",
+                    stack: ["PHP", "JavaScript", "HTML", "CSS", "Bootstrap", "Database", "AI-assisted Dev"],
+                    github: "#"
+                },
+                {
                     type: "Web Application - HackHeist Hackerthrone project",
                     title: "Campus Find",
                     desc: "Participated in a 36-hour MIT Hackathon “HackHeist”, where I developed Campus Find, a lost-and-found reporting system with user and admin login, separate admin portal for approvals, and local storage-based data management. Designed a clean and user-friendly UI and secured a position in the Top 10 from 90+ teams.",
@@ -473,7 +944,6 @@
                     stack: ["HTML", "CSS", "React.js", "Redux", "Tailwind"],
                     github: "#"
                 },
-
                 {
                     type: "Front-end Web-page",
                     title: "A Personal Portfolio Website",
@@ -481,26 +951,24 @@
                     stack: ["HTML", "CSS", "remix-icon", "JavaScript", "Tailwind"],
                     github: "https://sushantgiri-portfolio.netlify.app/"
                 },
-
-
                 {
-                    type: "Python Console App",
+                    type: "Python Console App — Practice Project",
                     title: "Weather Text-to-Speech Project",
-                    desc: "A Python app that fetches the current temperature of any city in Celsius using a weather API and reads it aloud using Windows Text-to-Speech (TTS). Handles invalid city names and API errors gracefully. API key is secured via a .env file for safe usage.",
+                    desc: "A practice project built for learning. A Python app that fetches the current temperature of any city in Celsius using a weather API and reads it aloud using Windows Text-to-Speech (TTS). Handles invalid city names and API errors gracefully. API key is secured via a .env file for safe usage.",
                     stack: ["Python", "Windows OS", "win32com.client", "requests", "pywin32"],
                     github: "#"
                 },
                 {
-                    type: "Python",
+                    type: "Python — Practice Project",
                     title: "Python Expense Tracker",
-                    desc: "A console-based expense manager that lets you add expenses, categorize them (food, travel, shopping, etc.), view all recorded expenses, and check total spending. Built for Python beginners to practice loops, lists, functions, and dictionaries in a real-world context.",
+                    desc: "A practice project built for learning. A console-based expense manager that lets you add expenses, categorize them (food, travel, shopping, etc.), view all recorded expenses, and check total spending. Built to practice loops, lists, functions, and dictionaries in a real-world context.",
                     stack: ["Python"],
                     github: "#"
                 },
                 {
-                    type: "Front-end Clone",
+                    type: "Front-end Clone — Practice Project",
                     title: "Amazon Clone Project",
-                    desc: "A front-end clone of the Amazon India website built purely with HTML and CSS. It replicates the layout, design, navigation bar, product grid, footer, and overall UI structure of the Amazon home page — great for practicing CSS Flexbox and layout skills.",
+                    desc: "A practice project built for learning. A front-end clone of the Amazon India website built purely with HTML and CSS. It replicates the layout, design, navigation bar, product grid, footer, and overall UI structure of the Amazon home page — great for practicing CSS Flexbox and layout skills.",
                     stack: ["HTML", "CSS"],
                     github: "#"
                 }
@@ -511,7 +979,9 @@
                 document.getElementById('popupType').textContent = p.type;
                 document.getElementById('popupTitle').textContent = p.title;
                 document.getElementById('popupDesc').textContent = p.desc;
-                document.getElementById('popupGithub').href = p.github;
+                const gh = document.getElementById('popupGithub');
+                gh.href = p.github;
+                gh.style.display = (p.github && p.github !== '#') ? '' : 'none';
                 document.getElementById('popupStack').innerHTML = p.stack.map(s => `<span class="popup-tag">${s}</span>`).join('');
                 document.getElementById('projOverlay').classList.add('open');
                 document.body.style.overflow = 'hidden';
